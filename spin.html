@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>spin</title>
+  <style>
+    button{
+        color: white;
+        border-radius: 18px; 
+        border:none;
+        height: 36px;
+        width: 70px;
+        background-color: dodgerblue;
+        margin: 8px;
+        cursor:pointer ;
+        box-shadow: 5px 10px 10px rgb(59, 56, 118);
+        transition: box-shadow 0.15s;
+    }
+    button:hover{
+        box-shadow: 10px 10px 10px rgb(82, 82, 82);
+    }
+  </style>
+</head>
+    <body>
+    <h1>Make a Spin</h1>
+    <button onclick="const variable = Math.random();
+     console.log(variable);
+    let result;
+      if(variable < 0.5){
+        result ='heads';
+      }
+      else {
+        result ='tails';
+      }
+      console.log(result);
+    const guess = 'heads';
+    if(guess == result){
+        console.log('win');
+    }else{
+        console.log('lose');
+    }
+
+;">spin</button>
+    <script>
+
+    </script>
+    
+    </body>
+</html>
