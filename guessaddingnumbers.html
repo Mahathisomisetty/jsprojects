@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guess</title>
+</head>
+<body>
+    <script>
+      let  n=Math.floor(Math.random() * 10);
+        console.log(n);
+      let m=Math.floor(Math.random() * 10);
+        console.log(m);
+        a=n+m;
+        
+        let k=prompt('enter guess:') ;
+
+        if(a == k){
+            console.log('you are right');
+        }
+        else{
+            console.log('you are wrong');
+        }
+        console.log(`answer is:${a}`);
+       
+
+    </script>
+</body>
+</html>
