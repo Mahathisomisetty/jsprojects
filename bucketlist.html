@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Bucket List Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .item.completed {
+            color: green;
+            font-size: 24px;
+        }
+        .item button {
+            margin-left: 5px;
+        }
+        .completed-details {
+            display: none;
+            margin-top: 10px;
+        }
+        .item.completed .completed-details {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>My Bucket List</h2>
+        <input type="text" id="newItemInput" placeholder="Add new bucket list item" />
+        <button onclick="addItem()">Add Item</button>
+        <ul id="bucketList"></ul>
+       
+    </div>
+
+    <script>
+        const bucketList = document.getElementById('bucketList');
+        
+        function addItem() {
+            const input = document.getElementById('newItemInput');
+            const itemText = input.value.trim();
+            if (itemText === "") {
+                alert("Please enter a bucket list item.");
+                return;
+            }
+
+            const item = document.createElement('li');
+            item.className = 'item';
+            item.innerHTML = `
+                <span>${itemText}</span>
+                <div>
+                    <button onclick="markCompleted(this)">Complete</button>
+                    <button onclick="removeItem(this)">Delete</button>
+                </div>
+                <div class="completed-details">
+                    <input type="file" accept="image/*" onchange="addPhoto(this)">
+                    <input type="text" placeholder="Add a note" oninput="addNote(this)">
+                    <div class="photo-container"></div>
+                </div>
+            `;
+            bucketList.appendChild(item);
+            input.value = '';
+        }
+
+        function markCompleted(button) {
+            const item = button.closest('.item');
+            item.classList.toggle('completed');
+        }
+
+        function removeItem(button) {
+            const item = button.closest('.item');
+            item.remove();
+        }
+        
+        function addPhoto(fileInput) {
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const photoContainer = fileInput.nextElementSibling.nextElementSibling;
+                    photoContainer.innerHTML = `<img src="${e.target.result}" alt="Uploaded photo" style="width: 100px; height: auto; margin-top: 10px; border:5px solid green;">`;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function addNote(input) {
+            input.setAttribute("value", input.value); 
+        }
+        function removephoto(button){
+            const item = button.closest('.file');
+            reader.remove();
+        }
+
+    </script>
+</body>
+</html>
