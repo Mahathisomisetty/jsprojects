@@ -7,18 +7,21 @@
   <style>
     button{
         color: white;
-        border-radius: 18px; 
+        border-radius: 50%; 
         border:none;
-        height: 36px;
+        height: 70px;
         width: 70px;
         background-color: dodgerblue;
         margin: 8px;
         cursor:pointer ;
         box-shadow: 5px 10px 10px rgb(59, 56, 118);
         transition: box-shadow 0.15s;
+        
     }
     button:hover{
         box-shadow: 10px 10px 10px rgb(82, 82, 82);
+        transform: rotateY(180deg);
+        transition: transform 0.25s  ease , box-shadow 0.15s; 
     }
   </style>
 </head>
