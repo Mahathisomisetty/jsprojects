@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    button{
+        height: 50px;
+        width: 65px;
+        background-color: black;
+        border: none;
+        color: white;
+        border-radius: 25px;
+        font-size: 20px;
+        
+       
+    }
+    .parent{
+        position: relative;
+         align-items: center;
+         justify-content: center;
+         display: flex;
+         /* background-color: yellow; */
+    }
+    .child{
+         margin-top: 540px; 
+        position: absolute;
+        background-color: white;
+        padding: 25px;
+         background-color: black;
+         /* font-size: 50px; */
+       /* border: 1px solid white; */
+       
+        
+    }
+    #input{
+        width: 314px;
+        height: 140px;
+        border: 2px solid black;
+        font-size: 35px;
+        text-wrap: wrap;
+        text-align: right;
+        color: white;
+        background-color: black;
+       
+    }
+    /* p>buttons{
+        padding: 20px;
+        border: 5px;
+    } */
+     button:hover{
+        color: blue;
+     }
+  </style>
+</head>
+<body>
+    
+    <div class="parent">
+        <input type="text" id="input">
+    <div class="child">
+        
+    <p>
+        <hr>
+        <button onclick="calculation='';input.value=' '">AC</button>
+        <button onclick="input.value = input.value.slice(0, -1); calculation = input.value;">del</button>
+        <button>+/-</button>
+        <button onclick="calculation += '/'; input.value = calculation;">/</button>
+    </p>
+    <p>
+        <button onclick="calculation += '7'; input.value = calculation;">7</button>
+        <button onclick="calculation += '8'; input.value = calculation;">8</button>
+        <button onclick="calculation += '9'; input.value = calculation;">9</button>
+        <button onclick="calculation += '*'; input.value = calculation;">X</button>
+    </p>
+    <p>
+        <button onclick="calculation += '4'; input.value = calculation;">4</button>
+        <button onclick="calculation += '5'; input.value = calculation;">5</button>
+        <button onclick="calculation += '6'; input.value = calculation;">6</button>
+        <button onclick="calculation += '-'; input.value = calculation;">-</button>
+    </p>
+    <p>
+        <button id="one" onclick="calculation += '1'; input.value = calculation;">1</button>
+        <button id="two" onclick="calculation += '2'; input.value = calculation;">2</button>
+        <button onclick="calculation += '3'; input.value = calculation;">3</button>
+        <button id="plus" onclick="calculation += '+'; input.value = calculation;">+</button>
+    </p>
+    <p>
+        <button onclick="calculation += '%'; input.value = calculation;">%</button>
+        <button onclick="calculation += 0; input.value = calculation;">0</button>
+        <button onclick="calculation += '.'; input.value = calculation;">.</button>
+        <button onclick="calculation = eval(calculation); input.value = calculation;">=</button>
+    </p>
+</div>
+</div>
+
+  <script>
+    let calculation = '';
+    let input = document.getElementById("input"); 
+
+     </script>
+</body>
+</html>
