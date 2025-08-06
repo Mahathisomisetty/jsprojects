@@ -1,4 +1,4 @@
 # All about the js projects
-#Todolist
-#Calculator 
-###calculator with html,css,js
+# Todolist
+# Calculator 
+### calculator with html,css,js
